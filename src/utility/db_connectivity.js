@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const initializeDb = () => {
   // MongoDB connection string (local)
-  const MONGO_URI = "mongodb://127.0.0.1:27017/my_database";
+  const MONGO_URI = "mongodb://127.0.0.1:27017/lms";
 
   // Connect to MongoDB
   mongoose

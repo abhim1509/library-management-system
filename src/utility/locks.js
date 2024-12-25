@@ -4,6 +4,7 @@ export const acquireLock = async (resource, ttl = 3000) => {
   let tryCount = 1;
   while (true) {
     tryCount++;
+
     const acquired = await setRedisKey(
       `lock:${resource}`,
       "locked",
