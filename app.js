@@ -4,8 +4,10 @@ import {
   closeDbConnection,
 } from "./src/utility/db_connectivity.js";
 import router from "./routes.js";
+// import { redisClient } from "./src/utility/redisClient.js";
 
 initializeDb();
+// redisClient();
 // Initialize Express app
 const app = express();
 const PORT = 3013;
@@ -26,16 +28,14 @@ app.listen(PORT, () => {
 
 // Gracefully handle uncaught exceptions
 process.on("uncaughtException", (err) => {
-  console.log(`UNCAUGHT EXCEPTION: ${JSON.stringify(err)}`);
+  console.log(`UNCAUGHT EXCEPTION: ${err}`);
   closeDbConnection();
   process.exit(1);
 });
 
 // Gracefully handle unhandled promise rejections
 process.on("unhandledRejection", (err) => {
-  console.log(`UNCAUGHT REJECTION: ${JSON.stringify(err)}`);
+  console.log(`UNCAUGHT REJECTION: ${err}`);
   closeDbConnection();
-  server.close(() => {
-    process.exit(1);
-  });
+  process.exit(1);
 });

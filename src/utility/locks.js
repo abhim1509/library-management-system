@@ -1,4 +1,4 @@
-import { removeRedisKey, setRedisKey } from "./redis";
+import { removeRedisKey, setRedisKey } from "./redis.js";
 
 export const acquireLock = async (resource, ttl = 3000) => {
   let tryCount = 1;

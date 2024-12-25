@@ -6,4 +6,4 @@ const bookSchema = new mongoose.Schema({
   copies: { type: Number, required: true, default: 1 },
 });
 
-export const BookTransactions = mongoose.model("book", bookSchema);
+export const Book = mongoose.model("book", bookSchema);

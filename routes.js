@@ -1,10 +1,13 @@
 import { Router } from "express";
-import { borrowBook, returnBook } from "./controllers/book-transactions";
+import {
+  borrowBook,
+  returnBook,
+} from "./src/controllers/transaction.controller.js";
 import {
   addBook,
   getBookDetails,
   getBooksList,
-} from "./src/controllers/book.controller";
+} from "./src/controllers/book.controller.js";
 const router = Router();
 
 router.post("/borrow", borrowBook);
