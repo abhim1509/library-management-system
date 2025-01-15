@@ -1,0 +1,11 @@
+{
+    "apps": [
+      {
+        "exec_mode": "cluster",
+        "instances": 3,
+        "script": "./app2.js",
+        "name": "2-Lib-management-Server",
+        "interpreter": "node"
+      }
+    ]
+  }

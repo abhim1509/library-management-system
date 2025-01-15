@@ -29,6 +29,8 @@ export const addBook = async (req, res) => {
   }
 };
 
-export const getBookDetails = async () => {};
+export const getBookDetails = async (req, res) => {
+  res.status(200).json("OK");
+};
 
 export const getBooksList = async () => {};
